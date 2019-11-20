@@ -123,8 +123,11 @@
             console.log(JSON.stringify(options));
             sensor = relative ? new RelativeOrientationSensor(options) : new AbsoluteOrientationSensor(options);
             sensor.onreading = () => {
-                console.log(JSON.stringify(model.rotation.y));
-                return model.quaternion.fromArray(sensor.quaternion).inverse()
+                // console.log(JSON.stringify(model.rotation));
+                model.quaternion.fromArray(sensor.quaternion).inverse()
+                model.quaternion.x = 0;
+                model.quaternion.z = 0;
+                return model.quaternion;
             };
             sensor.onerror = (event) => {
                 if (event.error.name == 'NotReadableError') {
