@@ -123,7 +123,7 @@
             console.log(JSON.stringify(options));
             sensor = relative ? new RelativeOrientationSensor(options) : new AbsoluteOrientationSensor(options);
             sensor.onreading = () => {
-                console.log(model.rotation);
+                console.log(JSON.stringify(model.rotation));
                 return model.quaternion.fromArray(sensor.quaternion).inverse()
             };
             sensor.onerror = (event) => {
