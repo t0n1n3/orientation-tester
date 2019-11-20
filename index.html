@@ -122,7 +122,7 @@
             const options = { frequency: 60, coordinateSystem };
             console.log(JSON.stringify(options));
             sensor = relative ? new RelativeOrientationSensor(options) : new AbsoluteOrientationSensor(options);
-            console.log(sensor)
+            console.log(model)
             sensor.onreading = () => model.quaternion.fromArray(sensor.quaternion).inverse();
             sensor.onerror = (event) => {
                 if (event.error.name == 'NotReadableError') {
@@ -134,6 +134,8 @@
 
         function renderScene() {
             requestAnimationFrame(renderScene);
+            console.log(camera);
+            console.log(renderer);
             camera.lookAt(scene.position);
             renderer.render(scene, camera);
         }
