@@ -8,6 +8,8 @@
     <!-- Origin Trial Token, feature = Generic Sensors, origin = https://intel.github.io, expires = 2018-02-27 -->
     <meta http-equiv="origin-trial" data-feature="Generic Sensors" data-expires="2018-02-27"
         content="AjL+UlBzLjx+0FPXrML6IMA/Ax9GsO/7rUvV/aaKkh3KknUSwDBgymn0d3NhGeRMNS7FlYD73ernqvZNoqzNMw4AAABWeyJvcmlnaW4iOiJodHRwczovL2ludGVsLmdpdGh1Yi5pbzo0NDMiLCJmZWF0dXJlIjoiR2VuZXJpY1NlbnNvciIsImV4cGlyeSI6MTUxOTczOTAwNX0=">
+    <script src="https://aframe.io/releases/0.9.2/aframe.min.js"></script>
+
     <style>
         body {
             margin: 0px;
@@ -152,7 +154,21 @@
 
     </script>
     <div id="console"></div>
+
+    <a-scene tap-place>
+        <a-assets>
+            <a-asset-item id="phone-obj" src="./resources/phone.obj"></a-asset-item>
+            <a-asset-item id="phone-mtl" src="./resources/phone.mtl"></a-asset-item>
+        </a-assets>
+
+
+        <a-obj-model src="#phone-obj" mtl="#phone-mtl"></a-obj-model>
+
+    </a-scene>
+
+
+
+    <script src="./js/placeModel.js"></script>
 </body>
 
 </html>
-
