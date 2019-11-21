@@ -125,7 +125,7 @@
             sensor.onreading = () => {
                 // console.log(JSON.stringify(model.rotation));
                 model.quaternion.fromArray(sensor.quaternion).inverse()
-                model.quaternion.x = 0;
+                model.quaternion.y = 0;
                 model.quaternion.z = 0;
                 return model.quaternion;
             };
