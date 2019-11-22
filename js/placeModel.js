@@ -1,5 +1,9 @@
 AFRAME.registerComponent('tap-place', {
     init: function () {
-        console.log('tapped');
+        var ground = document.getElementById('ground');
+        console.log(this.el)
+        ground.addEventListener('click', function (e) {
+            console.log(e);
+        });
     }
 });
